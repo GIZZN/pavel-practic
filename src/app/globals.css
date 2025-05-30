@@ -1,12 +1,14 @@
+@import './colors.css';
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--background-light);
+  --foreground: var(--text-on-light);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--background-dark);
+    --foreground: var(--text-on-dark);
   }
 }
 
