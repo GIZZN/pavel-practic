@@ -20,22 +20,22 @@ const Footer = () => {
           <div className={styles.column}>
             <h4>Каталог</h4>
             <ul>
-              <li><Link href="/catalog/smartphones">Смартфоны</Link></li>
-              <li><Link href="/catalog/tablets">Планшеты</Link></li>
-              <li><Link href="/catalog/laptops">Ноутбуки</Link></li>
-              <li><Link href="/catalog/smartwatches">Умные часы</Link></li>
-              <li><Link href="/catalog/accessories">Аксессуары</Link></li>
+              <li><Link href="/catalog/smartphones" onClick={(e) => e.preventDefault()}>Смартфоны</Link></li>
+              <li><Link href="/catalog/tablets" onClick={(e) => e.preventDefault()}>Планшеты</Link></li>
+              <li><Link href="/catalog/laptops" onClick={(e) => e.preventDefault()}>Ноутбуки</Link></li>
+              <li><Link href="/catalog/smartwatches" onClick={(e) => e.preventDefault()}>Умные часы</Link></li>
+              <li><Link href="/catalog/accessories" onClick={(e) => e.preventDefault()}>Аксессуары</Link></li>
             </ul>
           </div>
           
           <div className={styles.column}>
             <h4>Информация</h4>
             <ul>
-              <li><Link href="/about">О компании</Link></li>
-              <li><Link href="/delivery">Доставка и оплата</Link></li>
-              <li><Link href="/guarantee">Гарантия</Link></li>
-              <li><Link href="/service">Сервисный центр</Link></li>
-              <li><Link href="/contacts">Контакты</Link></li>
+              <li><Link href="/about" onClick={(e) => e.preventDefault()}>О компании</Link></li>
+              <li><Link href="/delivery" onClick={(e) => e.preventDefault()}>Доставка и оплата</Link></li>
+              <li><Link href="/guarantee" onClick={(e) => e.preventDefault()}>Гарантия</Link></li>
+              <li><Link href="/service" onClick={(e) => e.preventDefault()}>Сервисный центр</Link></li>
+              <li><Link href="/contacts" onClick={(e) => e.preventDefault()}>Контакты</Link></li>
             </ul>
           </div>
           
@@ -55,8 +55,8 @@ const Footer = () => {
             © 2025 Istore. Все права защищены.
           </div>
           <div className={styles.policy}>
-            <Link href="/privacy">Политика конфиденциальности</Link>
-            <Link href="/terms">Пользовательское соглашение</Link>
+            <Link href="/privacy" onClick={(e) => e.preventDefault()}>Политика конфиденциальности</Link>
+            <Link href="/terms" onClick={(e) => e.preventDefault()}>Пользовательское соглашение</Link>
           </div>
         </div>
       </div>

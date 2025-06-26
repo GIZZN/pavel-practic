@@ -92,6 +92,7 @@
   font-weight: bold;
   background: linear-gradient(to right, #fff, var(--primary-light));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 30px rgba(28, 205, 170, 0.3);
 }
@@ -567,6 +568,7 @@
   font-weight: bold;
   background: linear-gradient(to right, #fff, var(--primary-light));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

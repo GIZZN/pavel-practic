@@ -46,21 +46,42 @@ const Header = () => {
         <nav className={styles.navigation}>
           <ul>
             <li><Link href="/catalog">Каталог</Link></li>
-            <li><Link href="/sales">Акции</Link></li>
-            <li><Link href="/delivery">Доставка</Link></li>
-            <li><Link href="/contacts">Контакты</Link></li>
+            <li>
+              <button 
+                onClick={(e) => e.preventDefault()} 
+                className={styles.navButton}
+              >
+                Акции
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={(e) => e.preventDefault()} 
+                className={styles.navButton}
+              >
+                Доставка
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={(e) => e.preventDefault()} 
+                className={styles.navButton}
+              >
+                Контакты
+              </button>
+            </li>
           </ul>
         </nav>
         
         <div className={styles.userActions}>
-          <Link href="/favorites" className={styles.iconButton}>
+          <Link href="/favorites" className={styles.iconButton} onClick={(e) => e.preventDefault()}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="none" stroke="currentColor" strokeWidth="2"/>
             </svg>
             <span>Избранное</span>
           </Link>
           
-          <Link href="/cart" className={styles.iconButton}>
+          <Link href="/cart"  className={styles.iconButton}>
             <div className={styles.cartWrapper}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

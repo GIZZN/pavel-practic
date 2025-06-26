@@ -2,7 +2,7 @@
 
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 
-type Theme = 'light' | 'dark';
+type Theme = 'dark';
 
 interface ThemeContextType {
   theme: Theme;
@@ -24,7 +24,7 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark');
 
   useEffect(() => {
     // Проверяем предпочтения пользователя при загрузке
@@ -41,9 +41,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   useEffect(() => {
     if (theme === 'dark') {
       document.body.classList.add('dark-theme');
-      document.body.classList.remove('light-theme');
     } else {
-      document.body.classList.add('light-theme');
       document.body.classList.remove('dark-theme');
     }
     
@@ -52,7 +50,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+    setTheme(prevTheme => (prevTheme === 'dark' ? 'dark' : 'dark'));
   };
 
   return (

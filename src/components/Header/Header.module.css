@@ -183,6 +183,21 @@
   height: 32px;
 }
 
+.navButton {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #D9D9D9;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navButton:hover {
+  color: #1CCDAA;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 1rem;
