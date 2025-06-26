@@ -189,7 +189,10 @@ export default function Home() {
             
             <div className={styles.categoriesGrid}>
               {categoriesData.map((category) => (
-                <Link key={category.id} href={`/catalog/${category.slug}`} className={styles.category}>
+                <Link key={category.id} href={`/catalog/${category.slug} `} onClick={(e) => {
+                  e.preventDefault();
+                  console.log(category.slug);
+                }} className={styles.category}>
                   <div className={styles.categoryIconWrapper}>
                     <div className={styles.icon}>{category.icon}</div>
                   </div>
