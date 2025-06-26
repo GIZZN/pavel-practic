@@ -372,4 +372,57 @@ input:checked + .slider:before {
     grid-column: 1 / -1;
     text-align: right;
   }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  width: 100%;
+}
+
+.spinner {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, transparent, transparent 40%, #e0f2fe);
+  animation: spin 1s linear infinite;
+}
+
+.spinner::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.spinner::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: linear-gradient(45deg, #3b82f6, #2563eb, #1d4ed8);
+  border-radius: 50%;
+  z-index: 1;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
 } 

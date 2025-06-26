@@ -45,6 +45,7 @@ export default function Profile() {
   const [activeTab, setActiveTab] = useState('profile');
   const { user, isAuthenticated } = useAuth();
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -52,15 +53,20 @@ export default function Profile() {
   });
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      router.push('/auth/login');
-    } else if (user) {
-      setFormData(prev => ({
-        ...prev,
-        name: user.name || '',
-        email: user.email || ''
-      }));
-    }
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      if (!isAuthenticated) {
+        router.push('/auth/login');
+      } else if (user) {
+        setFormData(prev => ({
+          ...prev,
+          name: user.name || '',
+          email: user.email || ''
+        }));
+      }
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, [isAuthenticated, user, router]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -76,6 +82,22 @@ export default function Profile() {
     // В реальном приложении здесь был бы запрос к API для обновления данных
     console.log('Обновление данных:', formData);
   };
+
+  if (isLoading) {
+    return (
+      <div className={styles.page}>
+        <Header />
+        <main className={styles.main}>
+          <div className={styles.container}>
+            <div className={styles.loading}>
+              <div className={styles.spinner}></div>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!isAuthenticated || !user) {
     return null;
